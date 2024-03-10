@@ -1,13 +1,16 @@
-import { Categories, SideBar } from "../components";
+/* eslint-disable no-unused-vars */
+import { useState } from "react";
+import { Categories, SideBar, Videos } from "../components";
 
 const Home = () => {
+  const [category, setCategory] = useState(0);
   return (
     <div className="flex h-[92vh] w-screen">
       <SideBar />
-      <div className="md:w-sidebarwidth w-full">
+      <div className="w-full md:w-sidebarwidth">
         <div className="flex h-full flex-col">
-          <Categories className="flex-grow" />
-          <div>videos</div>
+          <Categories setCategory={setCategory} className="flex-grow" />
+          <Videos category={category} />
         </div>
       </div>
     </div>
