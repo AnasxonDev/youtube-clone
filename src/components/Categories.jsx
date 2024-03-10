@@ -2,38 +2,17 @@
 /* eslint-disable no-unused-vars */
 import { LeftArrow, RightArrow } from "./icons";
 
-const Categories = ({ setCategory }) => {
+const Categories = ({ category, setCategory }) => {
   const allCategories = [
     { id: "0", name: "All" },
-    { id: "1", name: "Film & Animation" },
-    { id: "2", name: "Autos & Vehicles" },
-    { id: "10", name: "Music" },
-    { id: "15", name: "Pets & Animals" },
-    { id: "17", name: "Sports" },
     { id: "20", name: "Gaming" },
-    { id: "22", name: "People & Blogs" },
-    { id: "23", name: "Comedy" },
-    { id: "24", name: "Entertainment" },
-    { id: "25", name: "News & Politics" },
-    { id: "26", name: "Howto & Style" },
-    { id: "27", name: "Education" },
-    { id: "28", name: "Science & Technology" },
-    { id: "29", name: "Nonprofits & Activism" },
-    { id: "30", name: "Movies" },
-    { id: "31", name: "Anime/Animation" },
-    { id: "32", name: "Action/Adventure" },
-    { id: "33", name: "Classics" },
-    { id: "34", name: "Comedy" },
-    { id: "35", name: "Documentary" },
-    { id: "36", name: "Drama" },
-    { id: "37", name: "Family" },
-    { id: "38", name: "Foreign" },
-    { id: "39", name: "Horror" },
-    { id: "40", name: "Sci-Fi/Fantasy" },
-    { id: "41", name: "Thriller" },
-    { id: "42", name: "Shorts" },
-    { id: "43", name: "Shows" },
-    { id: "44", name: "Trailers" },
+    { id: "2", name: "Auto Mobiles" },
+    { id: "17", name: "Sports" },
+    { id: "24", name: "Entertaintment" },
+    { id: "28", name: "Technology" },
+    { id: "10", name: "music" },
+    { id: "22", name: "Blogs" },
+    { id: "25", name: "News" },
   ];
 
   return (
@@ -42,15 +21,17 @@ const Categories = ({ setCategory }) => {
         <LeftArrow color="black" />
       </button>
       <div className="flex h-full flex-grow items-center gap-4 overflow-hidden">
-        {allCategories.map((category) => (
+        {allCategories.map((item) => (
           <button
-            key={category.id}
-            className="font-roboto flex-shrink-0 select-none rounded-lg bg-[#F2F2F2] px-2.5 py-1 hover:bg-[#EAEAEA]"
+            key={item.id}
+            className={`font-roboto flex-shrink-0 select-none rounded-lg ${category === item.id ? "bg-[#0F0F0F] text-white" : "bg-[#F2F2F2] hover:bg-[#EAEAEA]"} px-2.5 py-1`}
             onClick={() => {
-              setCategory(category.id);
+              if (category !== item.id) {
+                setCategory(item.id);
+              }
             }}
           >
-            {category.name}
+            {item.name}
           </button>
         ))}
       </div>

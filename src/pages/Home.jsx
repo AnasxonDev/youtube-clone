@@ -9,7 +9,11 @@ const Home = () => {
       <SideBar />
       <div className="w-full md:w-sidebarwidth">
         <div className="flex h-full flex-col">
-          <Categories setCategory={setCategory} className="flex-grow" />
+          <Categories
+            category={category}
+            setCategory={setCategory}
+            className="flex-grow"
+          />
           <Videos category={category} />
         </div>
       </div>
