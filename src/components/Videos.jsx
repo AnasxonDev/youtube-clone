@@ -31,7 +31,7 @@ const Videos = ({ category }) => {
             alt={video.snippet.title}
             className="w-full rounded-xl object-cover"
           />
-          <div className="flex bg-red-500">
+          <div className="flex">
             <div>channel image</div>
             <div>
               <h2>{video.snippet.title}</h2>

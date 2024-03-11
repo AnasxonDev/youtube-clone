@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-const RightArrow = ({ color }) => {
+const RightArrow = ({ color, size }) => {
   return (
     <svg
-      height="24"
+      height={size || 24}
       viewBox="0 0 24 24"
-      width="24"
+      width={size || 24}
       focusable="false"
       fill={color}
     >

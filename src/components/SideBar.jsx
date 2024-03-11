@@ -1,26 +1,89 @@
-import { HomeIcon, ShortsIcon, SubscriptionsIcon, YouIcon } from "./icons";
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import {
+  HomeIcon,
+  RightArrow,
+  ShortsIcon,
+  SubscriptionsIcon,
+  YouIcon,
+} from "./icons";
 
-const SideBar = () => {
-  const buttonStyles =
-    "rounded-lg flex flex-col gap-[5px] justify-center items-center w-[65px] h-[75px] hover:bg-[hsl(0,0%,90%)]";
+const SideBar = ({ isOpen }) => {
+  const closed =
+    "text-[10px] rounded-lg flex flex-col gap-[5px] justify-center items-center w-[65px] h-[75px] hover:bg-[hsl(0,0%,90%)]";
+
+  const opened =
+    "pl-[10.5px] rounded-lg text-[14px] flex gap-[20px] items-center h-[40px] w-[200px] hover:bg-[hsl(0,0%,90%)]";
+
   return (
-    <div className="hidden h-full w-[75px] select-none flex-col items-center pt-1 md:flex">
-      <div className={buttonStyles}>
+    <div
+      className={`font-roboto hidden h-full flex-shrink-0 overflow-auto ${isOpen ? "w-[230px] pt-[11.5px]" : "w-[75px] pt-1"} flex-col items-center md:flex`}
+    >
+      <div className={`${isOpen ? opened : closed}`}>
         <HomeIcon color="black" />
-        <h1 className="font-roboto text-[10px]">Home</h1>
+        <h1>Home</h1>
       </div>
-      <div className={buttonStyles}>
+      <div className={`${isOpen ? opened : closed}`}>
         <ShortsIcon color="black" />
-        <h1 className="font-roboto text-[10px]">Shorts</h1>
+        <h1>Shorts</h1>
       </div>
-      <div className={buttonStyles}>
+      <div className={`${isOpen ? opened : closed}`}>
         <SubscriptionsIcon color="black" />
-        <h1 className="font-roboto text-[10px]">Subscriptions</h1>
+        <h1>Subscriptions</h1>
       </div>
-      <div className={buttonStyles}>
-        <YouIcon color="black" />
-        <h1 className="font-roboto text-[10px]">You</h1>
+      {isOpen && <hr className="my-3 ml-[16px] w-[90%] text-black" />}
+      <div
+        className={`${isOpen ? "font-roboto inline-flex h-[40px] w-[200px] items-center gap-[5px] rounded-lg pl-[10.5px] text-[15px] font-medium hover:bg-[hsl(0,0%,90%)]" : closed}`}
+      >
+        {!isOpen && <YouIcon color="black" />}
+        <h1>You</h1>
+        {isOpen && <RightArrow color="black" size={20} />}
       </div>
+      {isOpen && (
+        <>
+          <div className={opened}>
+            <ShortsIcon color="black" />
+            <h1>Your channel</h1>
+          </div>
+          <div className={opened}>
+            <ShortsIcon color="black" />
+            <h1>History</h1>
+          </div>
+          <div className={opened}>
+            <ShortsIcon color="black" />
+            <h1>Your videos</h1>
+          </div>
+          <div className={opened}>
+            <ShortsIcon color="black" />
+            <h1>Watch later</h1>
+          </div>
+          <div className={opened}>
+            <ShortsIcon color="black" />
+            <h1>Your clips</h1>
+          </div>
+          <div className={opened}>
+            <ShortsIcon color="black" />
+            <h1>Liked videos</h1>
+          </div>
+          <hr className="my-3 ml-[16px] w-[90%] text-black" />
+          <div className={opened}>
+            <ShortsIcon color="black" />
+            <h1>Settings</h1>
+          </div>
+          <div className={opened}>
+            <ShortsIcon color="black" />
+            <h1>Report History</h1>
+          </div>
+          <div className={opened}>
+            <ShortsIcon color="black" />
+            <h1>Help</h1>
+          </div>
+          <div className={opened}>
+            <ShortsIcon color="black" />
+            <h1>Send feedback</h1>
+          </div>
+        </>
+      )}
     </div>
   );
 };

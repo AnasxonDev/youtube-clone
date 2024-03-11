@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useState, useRef, useEffect } from "react";
 import { Bars, Search, Bell, Create, MicroPhone, ArrowBack } from "./icons";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({ isOpen, setIsOpen }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [isFocused, setIsFocused] = useState(false);
   const [isFull, setIsFull] = useState(false);
@@ -71,7 +72,10 @@ const NavBar = () => {
         <>
           {/* left */}
           <div className="flex h-full items-center gap-4">
-            <button className="rounded-full p-2 hover:bg-[hsl(0,0%,90%)]">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="rounded-full p-2 hover:bg-[hsl(0,0%,90%)]"
+            >
               <Bars color="black" />
             </button>
             <Link to="/" className="flex h-full items-center">

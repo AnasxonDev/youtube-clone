@@ -7,7 +7,8 @@ export default {
         default: "white",
       },
       width: {
-        sidebarwidth: "calc(100vw - 75px)",
+        closesidebarwidth: "calc(100vw - 75px)",
+        opensidebarwidth: "calc(100vw - 240px)",
       },
     },
     screens: {
