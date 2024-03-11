@@ -12,8 +12,11 @@ export default {
       },
     },
     screens: {
-      md: "700px",
-      lg: "800px",
+      xsm: "700px",
+      sm: "800px",
+      md: "1100px",
+      lg: "1100px",
+      xl: "1300px",
     },
   },
   plugins: [],

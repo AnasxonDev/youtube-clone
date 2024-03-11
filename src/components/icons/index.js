@@ -10,6 +10,15 @@ import SubscriptionsIcon from "./SubscriptionsIcon";
 import YouIcon from "./YouIcon";
 import LeftArrow from "./LeftArrow";
 import RightArrow from "./RightArrow";
+import YourChannel from "./YourChannel";
+import History from "./History";
+import YourVideos from "./YourVideos";
+import WatchLater from "./WatchLater";
+import YourClips from "./YourClips";
+import LikedVideos from "./LikedVideos";
+import Settings from "./Settings";
+import Report from "./Report";
+import Help from "./Help";
 
 export {
   Bars,
@@ -24,4 +33,13 @@ export {
   YouIcon,
   LeftArrow,
   RightArrow,
+  YourChannel,
+  History,
+  YourVideos,
+  WatchLater,
+  YourClips,
+  LikedVideos,
+  Settings,
+  Report,
+  Help,
 };

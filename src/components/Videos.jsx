@@ -2,8 +2,9 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { API_KEY } from "../data";
+import VideoCard from "./VideoCard";
 
-const Videos = ({ category }) => {
+const Videos = ({ category, isOpen }) => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -23,29 +24,18 @@ const Videos = ({ category }) => {
   };
 
   return (
-    <div className="flex h-full flex-wrap gap-x-4 gap-y-20 overflow-auto p-5">
-      {videos.map((video) => (
-        <div key={video.id} className="w-[24%]">
-          <img
-            src={video.snippet.thumbnails.default.url}
-            alt={video.snippet.title}
-            className="w-full rounded-xl object-cover"
-          />
-          <div className="flex">
-            <div>channel image</div>
-            <div>
-              <h2>{video.snippet.title}</h2>
-              <h2>{video.snippet.channelTitle}</h2>
-              <div className="flex">
-                <p>Views: {video.statistics.viewCount}</p>
-                <p>{video.snippet.publishedAt}</p>
-              </div>
-            </div>
-            <div>dots</div>
-            {/* <p>Likes: {video.statistics.likeCount}</p> */}
-            {/* <p>{video.snippet.description}</p> */}
-          </div>
-        </div>
+    <div
+      className={`grid ${isOpen ? "lg:grid-cols-3" : "xl:grid-cols-4"} xsm:grid-cols-2 sm:grid-cols-2 gap-x-4 gap-y-[50px] overflow-auto p-4 pt-8 lg:grid-cols-3`}
+    >
+      {videos.map((item, index) => (
+        <VideoCard
+          key={index}
+          thumbnail={item.snippet.thumbnails.medium.url}
+          title={item.snippet.title}
+          channelName={item.snippet.channelTitle}
+          views={item.statistics.viewCount}
+          time={item.snippet.publishedAt}
+        />
       ))}
     </div>
   );

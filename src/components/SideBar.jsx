@@ -6,7 +6,17 @@ import {
   ShortsIcon,
   SubscriptionsIcon,
   YouIcon,
+  YourChannel,
+  History,
+  YourVideos,
+  WatchLater,
+  YourClips,
+  LikedVideos,
+  Settings,
+  Report,
+  Help,
 } from "./icons";
+import Feedback from "./icons/Feedback";
 
 const SideBar = ({ isOpen }) => {
   const closed =
@@ -42,44 +52,44 @@ const SideBar = ({ isOpen }) => {
       {isOpen && (
         <>
           <div className={opened}>
-            <ShortsIcon color="black" />
+            <YourChannel color="black" />
             <h1>Your channel</h1>
           </div>
           <div className={opened}>
-            <ShortsIcon color="black" />
+            <History color="black" />
             <h1>History</h1>
           </div>
           <div className={opened}>
-            <ShortsIcon color="black" />
+            <YourVideos color="black" />
             <h1>Your videos</h1>
           </div>
           <div className={opened}>
-            <ShortsIcon color="black" />
+            <WatchLater color="black" />
             <h1>Watch later</h1>
           </div>
           <div className={opened}>
-            <ShortsIcon color="black" />
+            <YourClips color="black" />
             <h1>Your clips</h1>
           </div>
           <div className={opened}>
-            <ShortsIcon color="black" />
+            <LikedVideos color="black" />
             <h1>Liked videos</h1>
           </div>
           <hr className="my-3 ml-[16px] w-[90%] text-black" />
           <div className={opened}>
-            <ShortsIcon color="black" />
+            <Settings color="black" />
             <h1>Settings</h1>
           </div>
           <div className={opened}>
-            <ShortsIcon color="black" />
+            <Report color="black" />
             <h1>Report History</h1>
           </div>
           <div className={opened}>
-            <ShortsIcon color="black" />
+            <Help color="black" />
             <h1>Help</h1>
           </div>
           <div className={opened}>
-            <ShortsIcon color="black" />
+            <Feedback color="black" />
             <h1>Send feedback</h1>
           </div>
         </>
