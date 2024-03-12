@@ -2,8 +2,30 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 const CardSkeleton = ({ cards }) => {
-  const imageHeight = { xl: 190, md: 210 };
-  const height = window.innerWidth >= 1300 ? imageHeight.xl : imageHeight.md;
+  const imageHeight = {
+    xl: 190,
+    md: 210,
+    sm: 260,
+    xsm: 200,
+    "2xsm": 280,
+    "3xsm": 250,
+  };
+  const width = window.innerWidth;
+
+  let height;
+  if (width >= 1300) {
+    height = imageHeight.xl;
+  } else if (width >= 1100) {
+    height = imageHeight.md;
+  } else if (width >= 800) {
+    height = imageHeight.sm;
+  } else if (width >= 700) {
+    height = imageHeight.xsm;
+  } else if (width >= 650) {
+    height = imageHeight["2xsm"];
+  } else if (width >= 500) {
+    height = imageHeight["3xsm"];
+  }
 
   return Array(cards)
     .fill(0)

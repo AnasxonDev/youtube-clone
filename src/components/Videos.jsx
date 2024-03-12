@@ -3,9 +3,8 @@ import { API_KEY } from "../data";
 import VideoCard from "./VideoCard";
 import CardSkeleton from "./CardSkeleton";
 
-const Videos = ({ category, isOpen }) => {
+const Videos = ({ category, isOpen, isLoading, setIsLoading }) => {
   const [videos, setVideos] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -29,12 +28,34 @@ const Videos = ({ category, isOpen }) => {
     }
   };
 
+  const breakpoints = {
+    xsm: 3,
+    sm: 6,
+    md: 9,
+    xl: 12,
+  };
+
+  const calculateCardsPerRow = () => {
+    const width = window.innerWidth;
+    if (width >= 1300) {
+      return breakpoints.xl;
+    } else if (width >= 1100) {
+      return breakpoints.md;
+    } else if (width >= 800) {
+      return breakpoints.sm;
+    } else {
+      return breakpoints.xsm;
+    }
+  };
+
+  const cards = calculateCardsPerRow();
+
   return (
     <div
-      className={`grid ${isOpen ? "lg:grid-cols-3" : "xl:grid-cols-4"} place-items-center gap-x-4 gap-y-[40px] overflow-auto p-4 xsm:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}
+      className={`grid ${isOpen ? "md:grid-cols-3" : "xl:grid-cols-4"} place-items-center gap-x-4 gap-y-[40px] overflow-auto p-4 sm:grid-cols-2 md:grid-cols-3`}
     >
       {isLoading ? (
-        <CardSkeleton cards={12} />
+        <CardSkeleton cards={cards} />
       ) : error ? (
         <div>Error fetching videos: {error}</div>
       ) : (
