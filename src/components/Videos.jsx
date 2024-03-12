@@ -31,10 +31,10 @@ const Videos = ({ category, isOpen }) => {
 
   return (
     <div
-      className={`grid ${isOpen ? "lg:grid-cols-3" : "xl:grid-cols-4"} place-items-center gap-x-4 gap-y-[50px] overflow-auto p-4 xsm:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}
+      className={`grid ${isOpen ? "lg:grid-cols-3" : "xl:grid-cols-4"} place-items-center gap-x-4 gap-y-[40px] overflow-auto p-4 xsm:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}
     >
       {isLoading ? (
-        <CardSkeleton cards={8} />
+        <CardSkeleton cards={12} />
       ) : error ? (
         <div>Error fetching videos: {error}</div>
       ) : (

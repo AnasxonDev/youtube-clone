@@ -10,11 +10,7 @@ const Home = ({ isOpen }) => {
         className={`w-full ${isOpen ? "sm:w-opensidebarwidth" : "sm:w-closesidebarwidth"}`}
       >
         <div className="flex h-full flex-col">
-          <Categories
-            category={category}
-            setCategory={setCategory}
-            className="flex-grow"
-          />
+          <Categories category={category} setCategory={setCategory} />
           <Videos category={category} isOpen={isOpen} />
         </div>
       </div>

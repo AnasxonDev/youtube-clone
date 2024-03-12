@@ -84,7 +84,7 @@ const NavBar = ({ isOpen, setIsOpen }) => {
             </Link>
           </div>
           {/* center */}
-          <form className="2xsm:flex ml-[80px] mr-[80px] hidden flex-grow justify-center gap-4">
+          <form className="ml-[80px] mr-[80px] hidden flex-grow justify-center gap-4 2xsm:flex">
             <div className="flex max-w-[600px] flex-grow">
               <div
                 className={`flex size-full items-center rounded-l-full border border-r-0 ${isFocused ? "border-blue-500" : "border-[#CCCCCC]"} shadow-inner shadow-[#e5e5e5]`}
@@ -114,17 +114,17 @@ const NavBar = ({ isOpen, setIsOpen }) => {
           {/* right */}
           <div className="h-full">
             {isLoggedIn ? (
-              <div className="2xsm:gap-3 flex size-full items-center">
+              <div className="flex size-full items-center 2xsm:gap-3">
                 <button
                   onClick={() => {
                     setIsFull(true);
                     setIsFocused(true);
                   }}
-                  className="2xsm:hidden block rounded-full p-2 hover:bg-[hsl(0,0%,90%)]"
+                  className="block rounded-full p-2 hover:bg-[hsl(0,0%,90%)] 2xsm:hidden"
                 >
                   <Search color="black" />
                 </button>
-                <button className="2xsm:hidden block rounded-full p-2 hover:bg-[hsl(0,0%,90%)]">
+                <button className="block rounded-full p-2 hover:bg-[hsl(0,0%,90%)] 2xsm:hidden">
                   <MicroPhone color="black" />
                 </button>
                 <button className="rounded-full p-2 hover:bg-[hsl(0,0%,90%)]">
