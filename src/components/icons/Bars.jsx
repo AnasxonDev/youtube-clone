@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 const Bars = ({ color }) => {
   return (
     <svg viewBox="0 0 24 24" width="24" height="24" fill={color}>

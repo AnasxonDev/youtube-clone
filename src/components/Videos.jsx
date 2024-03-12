@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { API_KEY } from "../data";
 import VideoCard from "./VideoCard";
@@ -25,7 +23,7 @@ const Videos = ({ category, isOpen }) => {
 
   return (
     <div
-      className={`grid ${isOpen ? "lg:grid-cols-3" : "xl:grid-cols-4"} xsm:grid-cols-2 sm:grid-cols-2 gap-x-4 gap-y-[50px] overflow-auto p-4 pt-8 lg:grid-cols-3`}
+      className={`grid ${isOpen ? "lg:grid-cols-3" : "xl:grid-cols-4"} gap-x-4 gap-y-[50px] overflow-auto p-4 pt-8 xsm:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}
     >
       {videos.map((item, index) => (
         <VideoCard

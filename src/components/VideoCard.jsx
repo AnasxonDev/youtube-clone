@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 const VideoCard = ({ thumbnail, title, channelName, views, time }) => {
   return (
     <div className="size-full">

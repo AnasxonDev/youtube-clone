@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 const LikedVideos = ({ color }) => {
   return (
     <svg

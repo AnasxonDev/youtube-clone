@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 const MicroPhone = ({ color }) => {
   return (
     <svg width="20" height="20" viewBox="0 0 256 256">

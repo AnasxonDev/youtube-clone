@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import { useState, useRef, useEffect } from "react";
 import { Bars, Search, Bell, Create, MicroPhone, ArrowBack } from "./icons";
 import { Link } from "react-router-dom";
