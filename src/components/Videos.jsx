@@ -10,6 +10,9 @@ const Videos = ({ category, isOpen, isLoading, setIsLoading }) => {
   useEffect(() => {
     fetchData();
   }, [category]);
+  useEffect(() => {
+    document.documentElement.scrollTop = 0;
+  }, [category]);
 
   const fetchData = async () => {
     setIsLoading(true);
