@@ -12,6 +12,7 @@ export default {
       },
     },
     screens: {
+      "2xsm": "650px",
       xsm: "700px",
       sm: "800px",
       md: "1100px",

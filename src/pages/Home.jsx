@@ -7,7 +7,7 @@ const Home = ({ isOpen }) => {
     <div className="flex h-[92vh] w-screen">
       <SideBar isOpen={isOpen} />
       <div
-        className={`w-full ${isOpen ? "md:w-opensidebarwidth" : "md:w-closesidebarwidth"}`}
+        className={`w-full ${isOpen ? "sm:w-opensidebarwidth" : "sm:w-closesidebarwidth"}`}
       >
         <div className="flex h-full flex-col">
           <Categories

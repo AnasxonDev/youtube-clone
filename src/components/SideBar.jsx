@@ -25,7 +25,7 @@ const SideBar = ({ isOpen }) => {
 
   return (
     <div
-      className={`font-roboto hidden h-full flex-shrink-0 overflow-auto ${isOpen ? "w-[230px] pt-[11.5px]" : "w-[75px] pt-1"} flex-col items-center md:flex`}
+      className={`font-roboto hidden h-full flex-shrink-0 overflow-auto ${isOpen ? "w-[230px] pt-[11.5px]" : "w-[75px] pt-1"} flex-col items-center sm:flex`}
     >
       <div className={`${isOpen ? opened : closed}`}>
         <HomeIcon color="black" />

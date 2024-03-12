@@ -15,7 +15,6 @@ const Videos = ({ category, isOpen }) => {
       const response = await fetch(videoListUrl);
       const data = await response.json();
       setVideos(data.items);
-      console.log(data);
     } catch (error) {
       console.error("Error fetching videos:", error);
     }
@@ -23,7 +22,7 @@ const Videos = ({ category, isOpen }) => {
 
   return (
     <div
-      className={`grid ${isOpen ? "lg:grid-cols-3" : "xl:grid-cols-4"} gap-x-4 gap-y-[50px] overflow-auto p-4 pt-8 xsm:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}
+      className={`grid ${isOpen ? "lg:grid-cols-3" : "xl:grid-cols-4"} place-items-center gap-x-4 gap-y-[50px] overflow-auto p-4 xsm:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3`}
     >
       {videos.map((item, index) => (
         <VideoCard

@@ -11,18 +11,6 @@ const Categories = ({ category, setCategory }) => {
     { id: "10", name: "Music" },
     { id: "22", name: "Blogs" },
     { id: "25", name: "News" },
-    { id: "25", name: "News" },
-    { id: "25", name: "News" },
-    { id: "25", name: "News" },
-    { id: "25", name: "News" },
-    { id: "25", name: "News" },
-    { id: "25", name: "News" },
-    { id: "25", name: "News" },
-    { id: "25", name: "News" },
-    { id: "25", name: "News" },
-    { id: "25", name: "News" },
-    { id: "25", name: "News" },
-    { id: "25", name: "News" },
   ];
 
   return (
