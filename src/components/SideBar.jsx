@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   HomeIcon,
   RightArrow,
@@ -13,10 +14,23 @@ import {
   Settings,
   Report,
   Help,
+  Feedback,
 } from "./icons";
-import Feedback from "./icons/Feedback";
 
-const SideBar = ({ isOpen }) => {
+const SideBar = ({ isOpen, setIsOpen }) => {
+  useEffect(() => {
+    function handleClose() {
+      if (window.innerWidth <= 1300) {
+        setIsOpen(false);
+      }
+    }
+
+    window.addEventListener("resize", handleClose);
+
+    return () => {
+      window.removeEventListener("resize", handleClose);
+    };
+  }, []);
   const closed =
     "text-[10px] rounded-lg flex flex-col gap-[5px] justify-center items-center w-[65px] h-[75px] hover:bg-[hsl(0,0%,90%)]";
 

@@ -1,13 +1,22 @@
 import { useState } from "react";
-import { Categories, SideBar, Videos } from "../components";
+import { Categories, SecondSideBar, SideBar, Videos } from "../components";
 
-const Home = ({ isOpen }) => {
+const Home = ({ isOpen, setIsOpen, isSecondOpen, setIsSecondOpen }) => {
   const [category, setCategory] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div className="flex h-[92vh] w-screen">
-      <SideBar isOpen={isOpen} />
+      <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <SecondSideBar
+        isSecondOpen={isSecondOpen}
+        setIsSecondOpen={setIsSecondOpen}
+      />
+      <div
+        onClick={() => setIsSecondOpen(false)}
+        className={`fixed inset-0 z-[9] bg-black ${isSecondOpen ? "opacity-50" : "opacity-0"} transition-opacity duration-500 ease-in-out ${isSecondOpen ? "block" : "hidden"}`}
+      />
+
       <div
         className={`w-full ${isOpen ? "sm:w-opensidebarwidth" : "sm:w-closesidebarwidth"} relative`}
       >

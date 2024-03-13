@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Bars, Search, Bell, Create, MicroPhone, ArrowBack } from "./icons";
 import { Link } from "react-router-dom";
 
-const NavBar = ({ isOpen, setIsOpen }) => {
+const NavBar = ({ isOpen, setIsOpen, setIsSecondOpen, isSecondOpen }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [isFocused, setIsFocused] = useState(false);
   const [isFull, setIsFull] = useState(false);
@@ -72,7 +72,13 @@ const NavBar = ({ isOpen, setIsOpen }) => {
           <div className="flex h-full items-center gap-4">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="rounded-full p-2 hover:bg-[hsl(0,0%,90%)]"
+              className="hidden rounded-full p-2 hover:bg-[hsl(0,0%,90%)] xl:block"
+            >
+              <Bars color="black" />
+            </button>
+            <button
+              onClick={() => setIsSecondOpen(true)}
+              className="rounded-full p-2 hover:bg-[hsl(0,0%,90%)] xl:hidden"
             >
               <Bars color="black" />
             </button>

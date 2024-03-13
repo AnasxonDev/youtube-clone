@@ -19,6 +19,7 @@ import LikedVideos from "./LikedVideos";
 import Settings from "./Settings";
 import Report from "./Report";
 import Help from "./Help";
+import Feedback from "./Feedback";
 
 export {
   Bars,
@@ -42,4 +43,5 @@ export {
   Settings,
   Report,
   Help,
+  Feedback,
 };
