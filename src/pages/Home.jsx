@@ -18,6 +18,7 @@ const Home = ({
       <SecondSideBar
         isSecondOpen={isSecondOpen}
         setIsSecondOpen={setIsSecondOpen}
+        isDarkMode={isDarkMode}
       />
       <div
         onClick={() => setIsSecondOpen(false)}
