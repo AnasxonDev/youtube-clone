@@ -191,7 +191,7 @@ const NavBar = ({
                     />
                     <button
                       onClick={() => setIsDarkMode(!isDarkMode)}
-                      className="mb-3 flex h-[50px] w-full items-center gap-3 pl-3 hover:bg-[hsl(0,0%,90%)] dark:hover:bg-[#272727]"
+                      className="mb-3 flex h-[50px] w-full items-center gap-3 pl-3 hover:bg-[hsl(0,0%,90%)] dark:hover:bg-[#3E3E3E]"
                     >
                       <AppearanceIcon
                         color={`${isDarkMode ? "white" : "black"}`}

@@ -32,10 +32,10 @@ const SideBar = ({ isOpen, setIsOpen, isDarkMode }) => {
     };
   }, []);
   const closed =
-    "text-[10px] cursor-pointer rounded-lg flex flex-col gap-[5px] justify-center items-center w-[65px] h-[75px] hover:bg-[hsl(0,0%,90%)]";
+    "text-[10px] cursor-pointer rounded-lg flex flex-col gap-[5px] justify-center items-center w-[65px] h-[75px] hover:bg-[hsl(0,0%,90%)] dark:hover:bg-[#3E3E3E]";
 
   const opened =
-    "pl-[10.5px] cursor-pointer rounded-lg text-[14px] flex gap-[20px] items-center h-[40px] w-[200px] hover:bg-[hsl(0,0%,90%)]";
+    "pl-[10.5px] cursor-pointer rounded-lg text-[14px] flex gap-[20px] items-center h-[40px] w-[200px] hover:bg-[hsl(0,0%,90%)] dark:hover:bg-[#3E3E3E]";
 
   return (
     <div className={`${isDarkMode ? "dark" : ""}`}>
@@ -56,7 +56,7 @@ const SideBar = ({ isOpen, setIsOpen, isDarkMode }) => {
         </div>
         {isOpen && <hr className="my-3 ml-[16px] w-[90%] text-black" />}
         <div
-          className={`${isOpen ? "font-roboto inline-flex h-[40px] w-[200px] items-center gap-[5px] rounded-lg pl-[10.5px] text-[15px] font-medium hover:bg-[hsl(0,0%,90%)]" : closed}`}
+          className={`${isOpen ? "font-roboto inline-flex h-[40px] w-[200px] items-center gap-[5px] rounded-lg pl-[10.5px] text-[15px] font-medium hover:bg-[hsl(0,0%,90%)] dark:hover:bg-[#3E3E3E]" : closed}`}
         >
           {!isOpen && <YouIcon color={isDarkMode ? "white" : "black"} />}
           <h1>You</h1>

@@ -33,7 +33,7 @@ const SecondSideBar = ({ isSecondOpen, setIsSecondOpen, isDarkMode }) => {
     };
   }, []);
   const sectionStyles =
-    "flex h-[40px] w-[200px] items-center gap-[20px] rounded-lg pl-[10.5px] text-[14px] hover:bg-[hsl(0,0%,90%)]";
+    "flex h-[40px] w-[200px] items-center gap-[20px] rounded-lg pl-[10.5px] text-[14px] hover:bg-[hsl(0,0%,90%)] dark:hover:bg-[#3E3E3E]";
   return (
     <div className={`${isDarkMode ? "dark" : ""}`}>
       <div
@@ -67,7 +67,7 @@ const SecondSideBar = ({ isSecondOpen, setIsSecondOpen, isDarkMode }) => {
           <h1>Subscriptions</h1>
         </div>
         <hr className="my-3 ml-[16px] w-[90%] text-black" />
-        <div className="font-roboto inline-flex h-[40px] w-[200px] items-center gap-[5px] rounded-lg pl-[10.5px] text-[15px] font-medium hover:bg-[hsl(0,0%,90%)]">
+        <div className="font-roboto inline-flex h-[40px] w-[200px] items-center gap-[5px] rounded-lg pl-[10.5px] text-[15px] font-medium hover:bg-[hsl(0,0%,90%)] dark:hover:bg-[#3E3E3E]">
           <h1>You</h1>
           <RightArrow color={isDarkMode ? "white" : "black"} size={20} />
         </div>
