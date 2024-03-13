@@ -28,7 +28,9 @@ const Home = ({
         className={`w-full ${isOpen ? "sm:w-opensidebarwidth" : "sm:w-closesidebarwidth"} relative`}
       >
         {isLoading && (
-          <div className="absolute inset-0 h-[55px] bg-white opacity-50" />
+          <div
+            className={`absolute inset-0 h-[55px] ${isDarkMode ? "bg-black" : "bg-white"} opacity-50`}
+          />
         )}
         <div className="flex h-full flex-col">
           <Categories
