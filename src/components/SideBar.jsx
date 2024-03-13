@@ -32,10 +32,10 @@ const SideBar = ({ isOpen, setIsOpen }) => {
     };
   }, []);
   const closed =
-    "text-[10px] rounded-lg flex flex-col gap-[5px] justify-center items-center w-[65px] h-[75px] hover:bg-[hsl(0,0%,90%)]";
+    "text-[10px] cursor-pointer rounded-lg flex flex-col gap-[5px] justify-center items-center w-[65px] h-[75px] hover:bg-[hsl(0,0%,90%)]";
 
   const opened =
-    "pl-[10.5px] rounded-lg text-[14px] flex gap-[20px] items-center h-[40px] w-[200px] hover:bg-[hsl(0,0%,90%)]";
+    "pl-[10.5px] cursor-pointer rounded-lg text-[14px] flex gap-[20px] items-center h-[40px] w-[200px] hover:bg-[hsl(0,0%,90%)]";
 
   return (
     <div
