@@ -9,7 +9,10 @@ const App = () => {
   const [isSecondOpen, setIsSecondOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   return (
-    <SkeletonTheme baseColor="#313131" highlightColor="#525252">
+    <SkeletonTheme
+      baseColor={isDarkMode ? "#3E3E3E" : "#CCCCCC"}
+      highlightColor={isDarkMode ? "#848484" : "#E0E0E0"}
+    >
       <Router>
         <NavBar
           isOpen={isOpen}

@@ -3,7 +3,7 @@ import { API_KEY } from "../data";
 import VideoCard from "./VideoCard";
 import CardSkeleton from "./CardSkeleton";
 
-const Videos = ({ category, isOpen, isLoading, setIsLoading }) => {
+const Videos = ({ category, isOpen, isLoading, setIsLoading, isDarkMode }) => {
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState(null);
 
@@ -54,27 +54,30 @@ const Videos = ({ category, isOpen, isLoading, setIsLoading }) => {
   const cards = calculateCardsPerRow();
 
   return (
-    <div
-      className={`grid ${isOpen ? "md:grid-cols-3" : "xl:grid-cols-4"} place-items-center gap-x-4 gap-y-[40px] overflow-auto p-4 sm:grid-cols-2 md:grid-cols-3`}
-    >
-      {isLoading ? (
-        <CardSkeleton cards={cards} />
-      ) : error ? (
-        <div>Error fetching videos: {error}</div>
-      ) : (
-        <>
-          {videos.map((item) => (
-            <VideoCard
-              key={item.id}
-              thumbnail={item.snippet.thumbnails.medium.url}
-              title={item.snippet.title}
-              channelName={item.snippet.channelTitle}
-              views={item.statistics.viewCount}
-              time={item.snippet.publishedAt}
-            />
-          ))}
-        </>
-      )}
+    <div className={`${isDarkMode ? "dark" : ""}`}>
+      <div
+        className={`grid dark:bg-[#0F0F0F] dark:text-white ${isOpen ? "md:grid-cols-3" : "xl:grid-cols-4"} place-items-center gap-x-4 gap-y-[40px] overflow-auto p-4 sm:grid-cols-2 md:grid-cols-3`}
+      >
+        {isLoading ? (
+          <CardSkeleton cards={cards} />
+        ) : error ? (
+          <div>Error fetching videos: {error}</div>
+        ) : (
+          <>
+            {videos.map((item) => (
+              <VideoCard
+                key={item.id}
+                thumbnail={item.snippet.thumbnails.medium.url}
+                title={item.snippet.title}
+                channelName={item.snippet.channelTitle}
+                views={item.statistics.viewCount}
+                time={item.snippet.publishedAt}
+                isDarkmode={isDarkMode}
+              />
+            ))}
+          </>
+        )}
+      </div>
     </div>
   );
 };

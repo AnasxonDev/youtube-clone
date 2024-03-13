@@ -43,6 +43,7 @@ const Home = ({
             isOpen={isOpen}
             isLoading={isLoading}
             setIsLoading={setIsLoading}
+            isDarkMode={isDarkMode}
           />
         </div>
       </div>
