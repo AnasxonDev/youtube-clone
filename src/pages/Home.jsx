@@ -1,13 +1,20 @@
 import { useState } from "react";
 import { Categories, SecondSideBar, SideBar, Videos } from "../components";
 
-const Home = ({ isOpen, setIsOpen, isSecondOpen, setIsSecondOpen }) => {
+const Home = ({
+  isOpen,
+  setIsOpen,
+  isSecondOpen,
+  setIsSecondOpen,
+  isDarkMode,
+  setIsDarkMode,
+}) => {
   const [category, setCategory] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div className="flex h-[92vh] w-screen">
-      <SideBar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <SideBar isOpen={isOpen} setIsOpen={setIsOpen} isDarkMode={isDarkMode} />
       <SecondSideBar
         isSecondOpen={isSecondOpen}
         setIsSecondOpen={setIsSecondOpen}
