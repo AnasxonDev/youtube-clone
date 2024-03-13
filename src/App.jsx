@@ -7,7 +7,7 @@ import { SkeletonTheme } from "react-loading-skeleton";
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSecondOpen, setIsSecondOpen] = useState(false);
-  const [theme, setTheme] = useState("light");
+  const [isDarkMode, setIsDarkMode] = useState(false);
   return (
     <SkeletonTheme baseColor="#313131" highlightColor="#525252">
       <Router>
@@ -15,8 +15,8 @@ const App = () => {
           isOpen={isOpen}
           setIsOpen={setIsOpen}
           setIsSecondOpen={setIsSecondOpen}
-          theme={theme}
-          setTheme={setTheme}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
         />
         <Routes>
           <Route
@@ -27,7 +27,7 @@ const App = () => {
                 setIsOpen={setIsOpen}
                 isSecondOpen={isSecondOpen}
                 setIsSecondOpen={setIsSecondOpen}
-                theme={theme}
+                isDarkMode={isDarkMode}
               />
             }
           />
