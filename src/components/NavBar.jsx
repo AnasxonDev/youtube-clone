@@ -46,6 +46,9 @@ const NavBar = ({ isOpen, setIsOpen, setIsSecondOpen, theme, setTheme }) => {
 
   return (
     <nav className="flex h-[8vh] items-center justify-between px-4">
+      {menu && (
+        <div onClick={() => setMenu(false)} class="fixed inset-0 z-[11]" />
+      )}
       {isFull ? (
         <>
           {/* left */}
@@ -156,7 +159,7 @@ const NavBar = ({ isOpen, setIsOpen, setIsSecondOpen, theme, setTheme }) => {
               </button>
               <button className="w-[60px] cursor-auto p-2">
                 <div
-                  className={`${menu ? "fixed" : "hidden"} menu-shadow z-[8] w-[300px] -translate-x-[310px] rounded-xl bg-white`}
+                  className={`${menu ? "fixed" : "hidden"} menu-shadow z-[12] w-[300px] -translate-x-[310px] rounded-xl bg-white`}
                 >
                   <div className="font-roboto flex gap-4  p-4">
                     <div className="pt-1">
