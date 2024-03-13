@@ -20,6 +20,7 @@ import Settings from "./Settings";
 import Report from "./Report";
 import Help from "./Help";
 import Feedback from "./Feedback";
+import AppearanceIcon from "./AppearanceIcon";
 
 export {
   Bars,
@@ -44,4 +45,5 @@ export {
   Report,
   Help,
   Feedback,
+  AppearanceIcon,
 };

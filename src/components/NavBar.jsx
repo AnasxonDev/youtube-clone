@@ -1,12 +1,28 @@
 import { useState, useRef, useEffect } from "react";
-import { Bars, Search, Bell, Create, MicroPhone, ArrowBack } from "./icons";
+import {
+  Bars,
+  Search,
+  Bell,
+  Create,
+  MicroPhone,
+  ArrowBack,
+  AppearanceIcon,
+} from "./icons";
 import { Link } from "react-router-dom";
 
-const NavBar = ({ isOpen, setIsOpen, setIsSecondOpen, isSecondOpen }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+const NavBar = ({ isOpen, setIsOpen, setIsSecondOpen, theme, setTheme }) => {
+  const [menu, setMenu] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [isFull, setIsFull] = useState(false);
   const inputRef = useRef(null);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
 
   useEffect(() => {
     function handleResize() {
@@ -119,37 +135,67 @@ const NavBar = ({ isOpen, setIsOpen, setIsSecondOpen, isSecondOpen }) => {
           </form>
           {/* right */}
           <div className="h-full">
-            {isLoggedIn ? (
-              <div className="flex size-full items-center 2xsm:gap-3">
-                <button
-                  onClick={() => {
-                    setIsFull(true);
-                    setIsFocused(true);
-                  }}
-                  className="block rounded-full p-2 hover:bg-[hsl(0,0%,90%)] 2xsm:hidden"
+            <div className="flex size-full items-center 2xsm:gap-3">
+              <button
+                onClick={() => {
+                  setIsFull(true);
+                  setIsFocused(true);
+                }}
+                className="block rounded-full p-2 hover:bg-[hsl(0,0%,90%)] 2xsm:hidden"
+              >
+                <Search color="black" />
+              </button>
+              <button className="block rounded-full p-2 hover:bg-[hsl(0,0%,90%)] 2xsm:hidden">
+                <MicroPhone color="black" />
+              </button>
+              <button className="rounded-full p-2 hover:bg-[hsl(0,0%,90%)]">
+                <Create color="black" />
+              </button>
+              <button className="rounded-full p-2 hover:bg-[hsl(0,0%,90%)]">
+                <Bell color="black" />
+              </button>
+              <button className="w-[60px] cursor-auto p-2">
+                <div
+                  className={`${menu ? "fixed" : "hidden"} menu-shadow z-[8] w-[300px] -translate-x-[310px] rounded-xl bg-white`}
                 >
-                  <Search color="black" />
-                </button>
-                <button className="block rounded-full p-2 hover:bg-[hsl(0,0%,90%)] 2xsm:hidden">
-                  <MicroPhone color="black" />
-                </button>
-                <button className="rounded-full p-2 hover:bg-[hsl(0,0%,90%)]">
-                  <Create color="black" />
-                </button>
-                <button className="rounded-full p-2 hover:bg-[hsl(0,0%,90%)]">
-                  <Bell color="black" />
-                </button>
-                <button className="w-[60px] cursor-auto p-2">
-                  <img
-                    src="/profile.png"
-                    alt="profile"
-                    className="size-[35px] cursor-pointer rounded-full object-cover"
-                  />
-                </button>
-              </div>
-            ) : (
-              <div>login</div>
-            )}
+                  <div className="font-roboto flex gap-4  p-4">
+                    <div className="pt-1">
+                      <img
+                        src="/profile.png"
+                        alt="profile image"
+                        className="size-[40px] cursor-pointer rounded-full object-cover"
+                      />
+                    </div>
+                    <div className="text-start">
+                      <h1>Anasxon Dev</h1>
+                      <h1 className="mb-2">@AnasxonDev</h1>
+                      <a
+                        href="https://youtube.com/@AnasxonDev?si=JGBztzR61dLfyka9"
+                        className="text-blue-500"
+                      >
+                        View your channel
+                      </a>
+                    </div>
+                  </div>
+                  <hr color="black" className="mb-3" />
+                  <button
+                    onClick={() => toggleTheme()}
+                    className="mb-3 flex h-[50px] w-full items-center gap-3 pl-3 hover:bg-[hsl(0,0%,90%)]"
+                  >
+                    <AppearanceIcon color="black" />
+                    <h1 className="text-14px font-roboto">
+                      Appearance: {capitalizeFirstLetter(theme)}
+                    </h1>
+                  </button>
+                </div>
+                <img
+                  src="/profile.png"
+                  alt="profile"
+                  className={`${menu ? "size-[33px]" : "size-[35px]"} m-auto cursor-pointer rounded-full object-cover`}
+                  onClick={() => setMenu(!menu)}
+                />
+              </button>
+            </div>
           </div>
         </>
       )}

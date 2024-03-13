@@ -7,14 +7,16 @@ import { SkeletonTheme } from "react-loading-skeleton";
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSecondOpen, setIsSecondOpen] = useState(false);
+  const [theme, setTheme] = useState("light");
   return (
     <SkeletonTheme baseColor="#313131" highlightColor="#525252">
       <Router>
         <NavBar
           isOpen={isOpen}
           setIsOpen={setIsOpen}
-          isSecondOpen={isSecondOpen}
           setIsSecondOpen={setIsSecondOpen}
+          theme={theme}
+          setTheme={setTheme}
         />
         <Routes>
           <Route
@@ -25,6 +27,7 @@ const App = () => {
                 setIsOpen={setIsOpen}
                 isSecondOpen={isSecondOpen}
                 setIsSecondOpen={setIsSecondOpen}
+                theme={theme}
               />
             }
           />
