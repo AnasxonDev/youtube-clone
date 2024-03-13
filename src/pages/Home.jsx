@@ -7,7 +7,6 @@ const Home = ({
   isSecondOpen,
   setIsSecondOpen,
   isDarkMode,
-  setIsDarkMode,
 }) => {
   const [category, setCategory] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +31,11 @@ const Home = ({
           <div className="absolute inset-0 h-[55px] bg-white opacity-50" />
         )}
         <div className="flex h-full flex-col">
-          <Categories category={category} setCategory={setCategory} />
+          <Categories
+            category={category}
+            setCategory={setCategory}
+            isDarkMode={isDarkMode}
+          />
           <Videos
             category={category}
             isOpen={isOpen}
