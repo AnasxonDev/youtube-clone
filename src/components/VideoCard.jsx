@@ -10,8 +10,8 @@ const VideoCard = ({
   isDarkmode,
 }) => {
   return (
-    <div className={`${isDarkmode ? "dark" : ""}`}>
-      <div className="font-roboto size-full max-w-[500px] cursor-pointer">
+    <div className={`${isDarkmode ? "dark" : ""} size-full`}>
+      <div className="font-roboto m-auto size-full max-w-[500px] cursor-pointer">
         <img
           src={thumbnail}
           alt="thumbnail"
