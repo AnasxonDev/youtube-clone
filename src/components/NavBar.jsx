@@ -81,7 +81,7 @@ const NavBar = ({
               </div>
               <button
                 type="button"
-                className="flex-none rounded-full p-3 hover:bg-[hsl(0,0%,90%)] dark:hover:bg-[#272727]"
+                className="flex-none rounded-full p-3 hover:bg-[hsl(0,0%,90%)] dark:hover:bg-[#3E3E3E]"
               >
                 <MicroPhone color={`${isDarkMode ? "white" : "black"}`} />
               </button>
@@ -136,7 +136,7 @@ const NavBar = ({
               </div>
               <button
                 type="button"
-                className="rounded-full bg-[#F2F2F2] p-3 hover:bg-[#D9D9D9] dark:bg-[#222222]"
+                className="rounded-full bg-[#F2F2F2] p-3 hover:bg-[#D9D9D9] dark:bg-[#222222] dark:hover:bg-[#3E3E3E]"
               >
                 <MicroPhone color={`${isDarkMode ? "white" : "black"}`} />
               </button>
@@ -153,7 +153,7 @@ const NavBar = ({
                 >
                   <Search color={`${isDarkMode ? "white" : "black"}`} />
                 </button>
-                <button className="block rounded-full p-2 hover:bg-[hsl(0,0%,90%)] dark:hover:bg-[#272727] 2xsm:hidden">
+                <button className="block rounded-full p-2 hover:bg-[hsl(0,0%,90%)] dark:hover:bg-[#3E3E3E] 2xsm:hidden">
                   <MicroPhone color={`${isDarkMode ? "white" : "black"}`} />
                 </button>
                 <button className="rounded-full p-2 hover:bg-[hsl(0,0%,90%)] dark:hover:bg-[#272727]">
