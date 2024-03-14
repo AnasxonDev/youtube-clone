@@ -10,6 +10,7 @@ const Videos = ({ category, isOpen, isLoading, setIsLoading, isDarkMode }) => {
   useEffect(() => {
     fetchData();
   }, [category]);
+
   useEffect(() => {
     document.documentElement.scrollTop = 0;
   }, [category]);
@@ -56,7 +57,9 @@ const Videos = ({ category, isOpen, isLoading, setIsLoading, isDarkMode }) => {
   return (
     <div className={`${isDarkMode ? "dark" : ""} overflow-auto`}>
       <div
-        className={`grid dark:bg-[#0F0F0F] dark:text-white ${isOpen ? "md:grid-cols-3" : "xl:grid-cols-4"} place-items-center gap-x-4 gap-y-[40px] overflow-auto p-4 sm:grid-cols-2 md:grid-cols-3`}
+        className={`grid dark:bg-[#0F0F0F] dark:text-white ${
+          isOpen ? "md:grid-cols-3" : "xl:grid-cols-4"
+        } place-items-center gap-x-4 gap-y-[40px] overflow-auto p-4 sm:grid-cols-2 md:grid-cols-3`}
       >
         {isLoading ? (
           <CardSkeleton cards={cards} />
