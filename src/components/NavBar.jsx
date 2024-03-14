@@ -46,7 +46,10 @@ const NavBar = ({
     <div className={`${isDarkMode ? "dark" : ""}`}>
       <nav className="flex h-[8vh] items-center justify-between px-4 dark:bg-[#0F0F0F] dark:text-white">
         {menu && (
-          <div onClick={() => setMenu(false)} class="fixed inset-0 z-[11]" />
+          <div
+            onClick={() => setMenu(false)}
+            className="fixed inset-0 z-[11]"
+          />
         )}
         {isFull ? (
           <>
