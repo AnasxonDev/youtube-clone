@@ -55,7 +55,7 @@ const Videos = ({ category, isOpen, isLoading, setIsLoading, isDarkMode }) => {
   const cards = calculateCardsPerRow();
 
   return (
-    <div className={`${isDarkMode ? "dark" : ""} overflow-auto`}>
+    <div className={`${isDarkMode ? "dark" : "light"} overflow-auto`}>
       <div
         className={`grid dark:bg-[#0F0F0F] dark:text-white ${
           isOpen ? "md:grid-cols-3" : "xl:grid-cols-4"

@@ -41,7 +41,7 @@ const Categories = ({ category, setCategory, isDarkMode }) => {
   };
 
   return (
-    <div className={`${isDarkMode ? "dark" : ""}`}>
+    <div className={`${isDarkMode ? "dark" : "light"}`}>
       <div
         ref={categoriesRef}
         className="flex h-[55px] w-full items-center gap-2 px-2 dark:bg-[#0F0F0F] dark:text-white"
